@@ -41,9 +41,10 @@ namespace Employee.Infrastructure.Repositories.Base
             return await _employeeContext.Set<T>().FindAsync(id);
         }
         
-        public Task UpdateAsync(T entity)
+        public async Task UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+            _employeeContext.Set<T>().Update(entity);
+            await _employeeContext.SaveChangesAsync();
         }
     }
 }

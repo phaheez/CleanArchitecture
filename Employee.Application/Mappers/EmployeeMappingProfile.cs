@@ -15,6 +15,7 @@ namespace Employee.Application.Mappers
         {
             CreateMap<Core.Entities.Employee, EmployeeResponse>().ReverseMap();
             CreateMap<Core.Entities.Employee, CreateEmployeeCommand>().ReverseMap();
+            CreateMap<Core.Entities.Employee, UpdateEmployeeCommand>().ReverseMap();
         }
     }
 }

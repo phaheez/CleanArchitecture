@@ -8,18 +8,11 @@ using System.Threading.Tasks;
 
 namespace Employee.Application.Commands
 {
-    //public record CreateEmployeeCommand(
-    //    string FirstName,
-    //    string LastName,
-    //    DateTime DateOfBirth,
-    //    string PhoneNumber,
-    //    string Email) : IRequest<EmployeeResponse>;
-
-    public class CreateEmployeeCommand : IRequest<EmployeeResponse>
+    public class UpdateEmployeeCommand: IRequest
     {
+        public int EmployeeId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DateTime DateOfBirth { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
     }

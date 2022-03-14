@@ -1,3 +1,4 @@
+using Employee.Api.Middlewares;
 using Employee.Application.Handlers.CommandHandlers;
 using Employee.Core.Repositories;
 using Employee.Core.Repositories.Base;
@@ -63,6 +64,16 @@ namespace Employee.API
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseHsts();
+
+            app.UseMiddleware(typeof(CustomResponseHeaderMiddleware));
+
+            //app.Use(async (context, next) =>
+            //{
+            //    context.Response.Headers.Add("Header-Key", "Header-Value");
+            //    await next();
+            //});
 
             app.UseEndpoints(endpoints =>
             {
